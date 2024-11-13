@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { Profiler, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -13,6 +13,7 @@ import Register from './components/Register.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import Order from './components/Order.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import Profile from './components/profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: 'order',
         element: <PrivateRoute><Order></Order></PrivateRoute>,
+      },
+      {
+        path: 'profile',
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       }
     ]
   },
